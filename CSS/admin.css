@@ -1,15 +1,22 @@
-@import url('https://fonts.googleapis.com/css2? family= Roboto:ital,wght@0,300;0,400;1,400 & display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;1,300;1,400&family=Roboto:ital@1&display=swap');
 *
 {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Poppins';
 }
 
 body
 {
-    background: #f5f5f5;
+    /*background: white;*/
+    background-image: url(/IMG/oso.png);
+    background-attachment: fixed;
+}
+
+.image
+{
+    width: 50%;
 }
 
 header
@@ -31,13 +38,13 @@ header
 
 .logo img
 {
-    width: 50px;
+    width: 250px;
 }
 
 .menu nav ul
 {
     display: flex;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Poppins';
 
 }
 
@@ -49,20 +56,27 @@ header
 
 .menu nav ul li a
 {
-    font-size: 15px;
+    font-size: 19px;
     text-decoration: none;
-    color: black;
+    color: #69F1A1;
     transition: background, opacity, 300ms;
 }
 
 .menu nav ul li a:hover
 {
     opacity: 0.5 ;
-    color: red;
+    color: white;
+}
+
+.buttons_cover
+{
+    display: flex;
+    justify-content: center;
+    text-align: center;
 }
 
 .btn_header-register,
-.btn_register-cover
+.btn_readMore-cover
 {
     /*padding: 15px 50px ;*/
     border: none;
@@ -79,10 +93,11 @@ header
     border-radius: 5px;
     color: white;
     transition:  background, color, 300ms;
+    filter: drop-shadow(-5px 0px 5px rgba(0,0,0,0.5));
 }
 
 .btn_header-register:hover,
-.btn_register-cover:hover
+.btn_readMore-cover:hover
 {
     background-color: #69F1A1;
     color:white;
@@ -114,16 +129,21 @@ main
 .text_information-cover
 {
     width: 50%;
+    font-family: 'Poppins', sans-serif;
 }
 
 .text_information-cover h1
 {
-   font-size: 50px; 
+   font-size: 45px; 
+   text-align: center;
+   padding-right: 20px;
 }
 
 .text_information-cover p
 {
-    font-size: 18px;
+    font-size: 25px;
+    text-align: center;
+    padding-right: 20px;
     margin-top: 40px;
 }
 
@@ -133,40 +153,10 @@ main
     margin-top: 40px;
 }
 
-.btn_readMore-cover
-{
-    padding: 14px 48px;
-    border: none;
-    border-radius: 10px;
-    color: black;
-    font-weight: 500;
-    font-size: 15px;
-    cursor: pointer;
-    margin-left: 10px;
-    transition: background 300ms;
-}
-
-.btn_readMore-cover:hover
-{
-    background-color: #E8E8E8;
-}
-
-.media_cover
-{
-    width: 50%;
-}
-
-.media_cover video
-{
-    width: 100%;
-    margin-top: -40px; 
-}
-
-/*BANNER*/
-
 .container_banner
 {
     margin-top: 80px;
+    padding: 55px;
 }
 
 .banner
@@ -202,8 +192,8 @@ main
 .banner_text h2
 {
     color: white;
-    font-size: 32px;
-    font-weight: 400;
+    font-size: 25px;
+    font-weight: 300;
 }
 
 .banner_text a
@@ -243,7 +233,99 @@ main
     opacity: 0.5;
 }
 
-@media (max-width: 1024px){
+ /*Testimony*/
+
+ .testimony
+ {
+    background-color: #121214;  
+    filter: drop-shadow(-25px 0px 30px rgba(0,0,0,0.5));
+    border-radius: 10px;
+ }
+
+ .testimony_container
+ {
+    display: grid;
+    grid-template-columns: 50px 1fr 50px;
+    gap: 1em;
+    align-items: center;
+    height: 300px;
+ }
+
+ .testimony_body 
+ {
+    display: grid;
+    grid-template-columns: 1fr max-content;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2em;  
+    grid-column: 2/3;
+    grid-row: 1/2;
+    opacity: 0;
+    pointer-events: none;
+ }
+
+ .testimony_body--show
+ {
+   pointer-events: unset;
+   opacity: 1;
+   transition: opacity 1.5s ease-in-out; 
+ }
+
+ .testimony_img
+ {
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: 50% 30%;
+ }
+
+ .testimony_texts
+ {
+    max-width: 700px;
+    text-align: center;
+ }
+
+ .subtitle
+ {
+    padding: 15px;
+    color: white;
+ }
+
+ .testimony_course
+ {
+    background-color: #69F1A1;
+    cursor: pointer;
+    color: #fff;
+    display: inline-block;
+    padding: 5px;
+ }
+
+ .testimony_course:hover
+ {
+    background-color: red;
+ }
+
+ .testimony_review
+ {
+    color: white;
+    text-align: center;
+ }
+
+ .testimony_arrow
+ {
+    width: 90%;
+    cursor: pointer;
+ }
+
+ .testimony_arrow:hover
+ {
+    background: #69F1A1;
+ }
+ 
+
+@media (max-width: 800px){
+
     .container_header,
     main{
         padding: 20px;
@@ -281,20 +363,38 @@ main
         padding: 10px 40px;
     }
 
+    .menu li:hover{
+        background-color: red;
+    }
+
     .mostrar_menu{  /* CLASE MANIPULADA POR JS*/
-        height: 235px;
+        height: 265px;
+        background-color: #121214;
+        color: white;
+    }
+
+    .buttons_cover{
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
 
     .text_information-cover h1{
         font-size: 40px;
+        text-align: center;
+        
     }
 
     .text_information-cover p{
-        font-size: 16px;
+        font-size: 25px;
+        text-align: center;
     }
 
+
     .banner_text h2{
-        font-size: 22px;
+        font-size: 19px;
+        margin-left: 35px;
+        text-align: center;
     }
 
     #icon_heart{
@@ -302,19 +402,61 @@ main
     }
 
     .banner_icon-fire{
-        right: -20px;
+        right: -15px;
+    }
+
+    .testimony
+    {
+        height: 450px;
+        padding: 20px;
+    }
+
+    .testimony_container{
+        grid-template-columns: 30px 1fr 30px;  
+    }
+
+    .testimony_body{
+         grid-template-columns: 1fr;
+         grid-template-rows: max-content max-content;
+         gap: 2em;
+         padding: 15px;
+         text-align: center;
+         justify-items: center;  
+    }
+
+    .subtitle{
+        padding: 10px;
+    }
+
+    .testimony_img{
+        width: 200px;
+        height: 200px;  
     }
     
 }
 
-@media (max-width: 920px){
+@media (max-width: 600px){
+    /*.cover{
+        display: flex;
+        justify-content: space-around;
+        width: 50%;
+    }
+
+   
+
+    .media_cove{
+        width: 45px;
+    }*/
+
     .text_information-cover{
         width: 100%;
     }
 
-    .media_cover{
+
+    /*.media_cover{
         display: none;
-    }
+    }*/
+
 
     .banner{
         height: auto;
@@ -333,5 +475,24 @@ main
     .banner_text{
         width: 100%;
         margin-top: -100px;
+    }
+
+    .testimony
+    {
+        height: 485px;
+        padding: 15px;
+    }
+
+    .testimony_container{
+        grid-template-columns: 28px 1fr 28px;
+        gap: .9em;
+    }
+
+    .testimony_arrow{
+        width: 100%;
+    }
+
+    .testimony_course{
+        margin-top: 15px;
     }
 }
