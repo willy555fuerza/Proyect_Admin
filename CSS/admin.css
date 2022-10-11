@@ -325,7 +325,6 @@ main
  
 
 @media (max-width: 800px){
-
     .container_header,
     main{
         padding: 20px;
@@ -334,6 +333,7 @@ main
     #icon_menu{
         display: block;
         cursor: pointer;
+        padding-right: 15px;
         font-size: 24px;
     }
 
@@ -369,6 +369,7 @@ main
 
     .mostrar_menu{  /* CLASE MANIPULADA POR JS*/
         height: 265px;
+        width: 180px;
         background-color: #121214;
         color: white;
     }
@@ -381,12 +382,22 @@ main
 
     .text_information-cover h1{
         font-size: 40px;
+        display: flex;
+        width: 100%;
+        padding-right: 0px;
+        justify-content: center;
+        align-content: center;
         text-align: center;
         
     }
 
     .text_information-cover p{
         font-size: 25px;
+        display: flex;
+        width: 100%;
+        padding-right: 0px;
+        justify-content: center;
+        align-content: center;
         text-align: center;
     }
 
@@ -407,7 +418,7 @@ main
 
     .testimony
     {
-        height: 450px;
+        height: 470px;
         padding: 20px;
     }
 
@@ -448,8 +459,38 @@ main
         width: 45px;
     }*/
 
+    #icon_menu{
+        padding-right: 5px;
+    }
+
+    .cover
+    {
+        padding-right: 20px;
+    }
+
     .text_information-cover{
         width: 100%;
+    }
+
+    .text_information-cover h1
+    {
+        display: flex;
+        width: 100%;
+        padding-right: 0px;
+        justify-content: center;
+        align-content: center;
+        text-align: center;
+    }
+
+
+    .text_information-cover p
+    {
+        display: flex;
+        width: 100%;
+        padding-right: 0px;
+        justify-content: center;
+        align-content: center;
+        text-align: center;
     }
 
 
@@ -479,7 +520,7 @@ main
 
     .testimony
     {
-        height: 485px;
+        height: 530px;
         padding: 15px;
     }
 
